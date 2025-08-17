@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QuestionBank – Welcome</title>
+  <style>
+    h1 {
+        color: blue;
+        box-shadow: 4px 10px 12px green;
+    }
+    h2 {
+        color: blue;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 1em;
+      margin-top: 10px;
+    }
+    p {
+        color: rebeccapurple;
+    }
+    #start {
+        background-color: aqua;
+        font-weight: bolder;
+        color: green;
+    }
+  </style>
+</head>
+<body>
+  <h1>WELCOME!</h1>
+  <h2 align="center">Test Yourself and Prepare Against the Upcoming Exams</h2>
+  <p>Please enter your name to proceed:</p>
+  <input type="text" id="username" placeholder="Your Name" />
+  <button onclick="start()" id="start">Start</button>
+
+  <script>
+    function start() {
+      const name = document.getElementById('username').value.trim();
+      if (name) {
+        localStorage.setItem('username', name);
+        window.location.href = "home.html";
+      } else {
+        alert("Please enter your name.");
+      }
+    }
+  </script>
+</body>
+</html>
